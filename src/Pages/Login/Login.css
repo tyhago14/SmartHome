@@ -1,149 +1,218 @@
-  .titulo_grande{
-    color: #49b6ff;
-    font-size: 3.5rem;
-    font-weight: 50;
-    user-select: none;
-  }
-  
-  .titulo_pequeno{
-    color: black;
-    margin-left: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 0.7rem;
-    font-size: 1.2rem;
-  }
-  
-  .linkRight {
-    text-transform: none;
-    float: left;
-    font-size: 90%;
-    padding-top: 1vh;
-    text-align: right;
-    width: 90%;
-  }
-    
+.titulo_grande {
+  color: var(--escuro);
+  font-size: 3.5rem;
+  font-weight: 50;
+  user-select: none;
+}
+
+.titulo_pequeno {
+  margin-left: 1rem;
+  color: var(--azul);
+  margin-top: 2rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+}
+
+.linkRight {
+  text-transform: none;
+  float: left;
+  font-size: 90%;
+  padding-top: 1vh;
+  text-align: right;
+  width: 90%;
+}
+
+.background {
+  overflow: hidden;
+}
+
+.loginflex {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  background-color: var(--claro);
+  width: 50%;
+  overflow-y: scroll;
+}
+
+.right {
+  width: 50%;
+  background: linear-gradient(
+    90deg,
+    #49b6ff 0%,
+    #007fff 50%,
+    rgba(26, 45, 61, 1) 100%
+  );
+}
+
+@media only screen and (max-width: 425px) {
   .loginflex {
     display: flex;
-    flex-direction: row;
-    height: 100dvh;
-  
-  }
-  
-  .left {
-    background-color: white;
-    width: 50%;
-    overflow-y:  scroll;
-  }
-  
-  .right {
-    width: 50%;
-    background: linear-gradient(
-      90deg,
-      #49b6ff 0%,
-      #007fff 50%,
-      rgba(26, 45, 61, 1) 100%
-    );
-  }
-  
-  
-  
-  @media only screen and (max-width: 425px) {
-    .loginflex {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .left {
-      background-color: rgb(255, 255, 255);
-      width: 100%;
-      height: 100dvh;
-    }
-    
-    .right {
-      display: none;
-    }
-  
-    .titulo_grande{
-      font-size: 2.5rem;
-      padding-top: 1rem;
-    }
-  }
-  
-  
-  #login-error-email-holder {
-    width: 100%;
-    height: 100%;
-    display: grid;
-  }
-  
-  #login-error-email {
-    width: 100%;
-    margin-top: 0;
-    margin-left: 16px;
-    padding: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    color: #bd0505;
-    user-select: none;
-    display: none;
-  }
-  
-  #login-error-password-holder {
-    width: 100%;
-    height: 100%;
-    display: grid;
-  }
-  
-  #login-error-password {
-    width: 100%;
-    margin-top: 0;
-    margin-left: 16px;
-    padding: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    color: #bd0505;
-    user-select: none;
-    display: none;
-  }
-  
-  .login__container {
     flex-direction: column;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-bottom: 5vw;
   }
-  .login__textBox {
-    border-radius: 25px;
-    border: 1px solid black;
-    padding: 15px;
-    font-size: 18px;
-    width: 90%;
+
+  .left {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100dvh;
   }
-  
-  .login__btn {
-    width: auto;
-    border-radius: 25px;
-    border: 1px solid black;
-    padding: 15px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    color: white;
-    background-color: rgb(74, 183, 255);
-    font-weight: bolder;
-    font-size: 130%;
+
+  .titulo_grande {
+    font-size: 2.5rem;
+    padding-top: 1rem;
   }
-  
-  .login__btn:hover {
-    background-color: #007fff;
-    cursor: pointer;
+}
+
+.login__container {
+  flex-direction: column;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-bottom: 5vw;
+  width: 40rem;
+}
+.login__textBox {
+  border-radius: 25px;
+  border: 1px solid black;
+  padding: 15px;
+  font-size: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login__btn {
+  width: auto;
+  border-radius: 25px;
+  border: 1px solid black;
+  padding: 15px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: white;
+  background-color: var(--claro);
+  font-weight: bolder;
+  font-size: 130%;
+}
+
+.login__btn:hover {
+  background-color: var(--azul);
+  cursor: pointer;
+}
+
+.logo-principal {
+  text-align: center;
+}
+
+.imageContainer {
+  max-width: 100%;
+  margin: 2vw 5vw 3vw 5vw;
+}
+
+#clouds {
+  padding: 100px 0px 0px 0px;
+  background: #000b13;
+  background: -webkit-linear-gradient(top, var(--claro) 0%, #fff 100%);
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+  width: 200px;
+  height: 50px;
+  background: #fff;
+  border-radius: 200px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  position: relative;
+}
+
+.cloud:before,
+.cloud:after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+  width: 120px;
+  height: 120px;
+  top: -55px;
+  left: auto;
+  right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+  -webkit-animation: moveclouds 25s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+  left: 200px;
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0.6; /*opacity proportional to the size*/
+
+  /*Speed will also be proportional to the size and opacity*/
+  /*More the speed. Less the time in 's' = seconds*/
+  -webkit-animation: moveclouds 35s linear infinite;
+}
+
+.x3 {
+  left: -250px;
+  top: -200px;
+
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8; /*opacity proportional to the size*/
+
+  -webkit-animation: moveclouds 30s linear infinite;
+}
+
+.x4 {
+  left: 470px;
+  top: -250px;
+
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  transform: scale(0.75);
+  opacity: 0.75; /*opacity proportional to the size*/
+
+  -webkit-animation: moveclouds 28s linear infinite;
+}
+
+.x5 {
+  left: -150px;
+  top: -150px;
+
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8; /*opacity proportional to the size*/
+
+  -webkit-animation: moveclouds 30s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+  0% {
+    margin-left: 100vw;
   }
-  
-  .logo-principal{
-    text-align: center;
+  100% {
+    margin-left: -100vw;
   }
-  
-  .imageContainer{
-    max-width: 100%;
-    margin: 2vw 5vw 3vw 5vw ;
-  }
+}

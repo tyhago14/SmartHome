@@ -27,14 +27,18 @@ const Login = () => {
   };
   return (
     <>
-      <div className="loginflex">
-        <div className="left">
-          <div className="imageContainer">
-            {/* <img src={logo} alt="Logo" className="logo-principal" /> */}
-          </div>
+      <div className="background">
+        <div id="clouds">
+          <div className="cloud x1"></div>
+          <div className="cloud x2"></div>
+          <div className="cloud x3"></div>
+          <div className="cloud x4"></div>
+          <div className="cloud x5"></div>
+        </div>
+        <div className="loginflex">
           <div className="login__container">
             <div className="titulo_grande"> Inicie Sessão </div>
-            <div className="titulo_pequeno"> E-MAIL </div>
+            <div className="titulo_pequeno"> E-mail de utilizador </div>
             <input
               id="email"
               type="text"
@@ -43,10 +47,8 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               onKeyDown={handleKeyDownOther}
             />
-            <div id="login-error-email-holder">
-              <p id="login-error-email"></p>
-            </div>
-            <div className="titulo_pequeno"> PALAVRA-PASSE </div>
+
+            <div className="titulo_pequeno"> Palavra-Passe </div>
             <input
               id="passwordfield"
               type="password"
@@ -55,24 +57,18 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               onKeyDown={handleKeyDownPass}
             />
-            <div id="login-error-password-holder">
-              <p id="login-error-password"></p>
-            </div>
+
             <div className="linkRight">
               <Link to="/reset">Esqueceu-se da palavra-passe?</Link>
             </div>
-            <button
-              className="login__btn"
-              onClick={handleClick}
-            >
-              INICIAR SESSÃO
+            <button className="login__btn" onClick={handleClick}>
+                Iniciar sessão
             </button>
             <div>
               Não tem conta? <Link to="/signup">Crie uma agora.</Link>
             </div>
           </div>
         </div>
-        <div className="right"></div>
       </div>
     </>
   );
