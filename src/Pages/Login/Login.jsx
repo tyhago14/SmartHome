@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-//import logo from "../images/FactoryPulse.svg";
+import logo from "../../assets/home3-final.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -36,6 +36,7 @@ const Login = () => {
           <div className="cloud x5"></div>
         </div>
         <div className="loginflex">
+          <div className="left">
           <div className="login__container">
             <div className="titulo_grande"> Inicie Sessão </div>
             <div className="titulo_pequeno"> E-mail de utilizador </div>
@@ -68,6 +69,13 @@ const Login = () => {
               Não tem conta? <Link to="/signup">Crie uma agora.</Link>
             </div>
           </div>
+          </div>
+          <div className="right">
+            <div className="imageContainer">
+              <img src={logo} alt="Logo" />
+            </div>
+          </div>
+
         </div>
       </div>
     </>

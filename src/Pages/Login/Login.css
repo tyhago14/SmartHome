@@ -32,19 +32,14 @@
 }
 
 .left {
-  background-color: var(--claro);
   width: 50%;
-  overflow-y: scroll;
+  display: flex;            
+  justify-content: right;  
 }
 
 .right {
   width: 50%;
-  background: linear-gradient(
-    90deg,
-    #49b6ff 0%,
-    #007fff 50%,
-    rgba(26, 45, 61, 1) 100%
-  );
+  text-align: left;
 }
 
 @media only screen and (max-width: 425px) {
@@ -100,14 +95,12 @@
   cursor: pointer;
 }
 
-.logo-principal {
-  text-align: center;
+.imageContainer img{
+  width: 35rem;    
+  padding-left: 5rem;
+  margin-top: -5rem;
 }
 
-.imageContainer {
-  max-width: 100%;
-  margin: 2vw 5vw 3vw 5vw;
-}
 
 #clouds {
   padding: 100px 0px 0px 0px;
