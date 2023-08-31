@@ -39,23 +39,23 @@ const Comp_Sidebar = ({ children }) => {
 
           <li
             className={`sidebar2-item ${
+              hoverIcon === "Agenda" ? "sidebar2-linkAtualPage" : ""
+            }`}
+          >
+            <a href="#top" className="sidebar2-link" onClick={goDash}>
+              <MdOutlineEditCalendar size={40} />
+              <span className="link-text">Dispositivos</span>
+            </a>
+          </li>
+
+          <li
+            className={`sidebar2-item ${
               hoverIcon === "Conta" ? "sidebar2-linkAtualPage" : ""
             }`}
           >
             <a href="#top" className="sidebar2-link" onClick={goDash}>
               <MdManageAccounts size={40} />
               <span className="link-text">Conta</span>
-            </a>
-          </li>
-
-          <li
-            className={`sidebar2-item ${
-              hoverIcon === "Agenda" ? "sidebar2-linkAtualPage" : ""
-            }`}
-          >
-            <a href="#top" className="sidebar2-link" onClick={goDash}>
-              <MdOutlineEditCalendar size={40} />
-              <span className="link-text">Agenda</span>
             </a>
           </li>
 

@@ -1,9 +1,12 @@
 import Sidebar from "../../Components/Comp_Sidebar/Comp_Sidebar"
+import Navbar from "../../Components/Comp_Navbar/Comp_Navbar"
 const Dashboard = () => {
     return (
         <>
-                <h1>hahaha</h1>
             <Sidebar>
+                <Navbar>
+                    <h1>hahaha</h1>
+                </Navbar>
             </Sidebar>
         </>
     );
