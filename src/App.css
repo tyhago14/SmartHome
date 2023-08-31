@@ -1,9 +1,9 @@
 :root {
     --claro: #8ecae6;
     --azul: #219ebc;
-    --escuro: #023047;
-    --amarelo: #ffb703;
-    --laranja: #fb8500;
+    --escuro: #2B8750;
+    --verde: #B6D936;
+    --laranja: #F2D377;
 }
 
 body {
@@ -23,7 +23,7 @@ a:visited {
 }
 a:hover {
   text-decoration: underline;
-  color: var(--azul);
+  color: var(--laranja);
 }
 a:active {
   text-decoration: underline;
