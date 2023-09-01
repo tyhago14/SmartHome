@@ -1,0 +1,78 @@
+input.custom-input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.row {
+    display: flex;
+}
+.row .col {
+    flex: 1;
+}
+.text-icon {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.tabs {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+}
+.tab {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+}
+.tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8em;
+    background: var(--escuro);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+.tab-label:hover {
+    background: var(--medio);
+}
+.tab-label::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all 0.35s;
+}
+.tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: #2c3e50;
+    background: white;
+    transition: all 0.35s;
+}
+.tab-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: var(--verde);
+    cursor: pointer;
+}
+.tab-close:hover {
+    background: var(--escuro);
+}
+input.custom-input:checked + .tab-label {
+    background: var(--medio);
+}
+input.custom-input:checked + .tab-label::after {
+    transform: rotate(90deg);
+}
+input.custom-input:checked ~ .tab-content {
+    max-height: max-content;
+    padding: 1em;
+}

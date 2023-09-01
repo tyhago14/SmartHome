@@ -1,10 +1,11 @@
 import Sidebar from "../../Components/Comp_Sidebar/Comp_Sidebar";
 import Navbar from "../../Components/Comp_Navbar/Comp_Navbar";
-const Dashboard = () => {
+
+const Conta = () => {
     return (
         <>
-            <Sidebar Page="Dashboard">
-                <Navbar Page="Dashboard">
+            <Sidebar Page="Conta">
+                <Navbar Page="Conta">
                     <h1>hahaha</h1>
                 </Navbar>
             </Sidebar>
@@ -12,4 +13,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default Conta;
