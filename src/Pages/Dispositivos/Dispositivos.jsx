@@ -30,6 +30,15 @@ const Dispositivos = () => {
                                             </label>
                                             <div className="tab-content">
                                                 {"BBBBB"}
+                                                {"BBBBB"}
+                                                {"BBBBB"}
+                                                {"BBBBB"}
+                                                {"BBBBB"}
+                                                {"BBBBB"}
+                                                {"BBBBB"}
+                                                {"BBBBB"}
+                                                {"BBBBB"}
+                                                {"BBBBB"}
                                             </div>
                                         </div>
                                     </React.Fragment>
