@@ -1,67 +1,56 @@
 import Sidebar from "../../Components/Comp_Sidebar/Comp_Sidebar";
 import Navbar from "../../Components/Comp_Navbar/Comp_Navbar";
 import "./Dashboard.css";
+import { Charts1 } from "../../Components/Comp_Charts/Comp_Charts";
 const Dashboard = () => {
     return (
         <>
             <Sidebar Page="Dashboard">
                 <Navbar Page="Dashboard">
                     <section className="basic-grid">
-                        <div className="gridBox card-superwide card-tall">
-                            <div className="gridBox-text"> Temperatura ºC </div>
+                        <div className="gridBox card-wide">
+                            <div className="gridBox-text">
+                                {" "}
+                                Temperatura Atual{" "}
+                            </div>
+                            <Charts1 />
                         </div>
-                        <div className="gridBox card-superwide card-tall">
-                            <div className="gridBox-text"> Humidade % </div>
-                            <table className="motoresTable">
-                                <tbody>
-                                    <tr>
-                                        <th>Nome</th>
-                                        <th>Posição</th>
-                                        <th>Temperatura</th>
-                                    </tr>
-                                    <tr>
-                                        <td>motorA1</td>
-                                        <td>-1</td>
-                                        <td>23 ºC</td>
-                                    </tr>
-                                    <tr>
-                                        <td>motorA2</td>
-                                        <td>-91</td>
-                                        <td>23 ºC</td>
-                                    </tr>
-                                    <tr>
-                                        <td>motorA3</td>
-                                        <td>104</td>
-                                        <td>23 ºC</td>
-                                    </tr>
-                                    <tr>
-                                        <td>motorA4</td>
-                                        <td>-1</td>
-                                        <td>23 ºC</td>
-                                    </tr>
-                                    <tr>
-                                        <td>motorA5</td>
-                                        <td>48</td>
-                                        <td>23 ºC</td>
-                                    </tr>
-                                    <tr>
-                                        <td>motorA6</td>
-                                        <td>0</td>
-                                        <td>23 ºC</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div className="gridBox card-wide3">
+                            <div className="gridBox-text">
+                                {" "}
+                                Histórico de temperatura{" "}
+                            </div>
+                            <Charts1 />
+                        </div>
+                        <div className="gridBox">
+                            <div className="gridBox-text">
+                                {" "}
+                                Bateria do sensor{" "}
+                            </div>
+                            <Charts1 />
+                        </div>
+                        <div className="gridBox card-wide">
+                            <div className="gridBox-text"> Humidade</div>
+                            <Charts1 />
+                        </div>
+                        <div className="gridBox card-wide3">
+                            <div className="gridBox-text">
+                                {" "}
+                                Histórico de humidade{" "}
+                            </div>
+                            <Charts1 />
+                        </div>
+                        <div className="gridBox">
+                            <div className="gridBox-text">
+                                {" "}
+                                Bateria do sensor{" "}
+                            </div>
+                            <Charts1 />
                         </div>
                         <div className="gridBox card-wide">
                             <div className="gridBox-text"> Interruptor </div>
                         </div>
-                        <div className="gridBox card-wide">
-                            <div className="gridBox-text"> Histórico </div>
-                        </div>
-                        <div className="gridBox card-wide">
-                            <div className="gridBox-text"> Bateria </div>
-                        </div>
-                        <div className="gridBox card-supermegawide">
+                        <div className="gridBox card-wide4">
                             <div className="gridBox-text"> Meteorologia </div>
                         </div>
                     </section>

@@ -1,8 +1,8 @@
 .gridBox {
-    background-color: #b6d9361e;
+    background-color: #fffffe;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
         rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -26,7 +26,7 @@
 .gridBox-subtext {
     font-size: 1.5rem;
     font-weight: bold;
-    color: grey;
+    color: #fefffe;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
@@ -66,10 +66,13 @@
     .card-wide {
         grid-column: span 2 / auto;
     }
-    .card-superwide {
+    .card-wide3 {
         grid-column: span 3 / auto;
     }
-    .card-supermegawide {
+    .card-wide4 {
+        grid-column: span 4 / auto;
+    }
+    .card-wide6 {
         grid-column: span 6 / auto;
     }
 }
