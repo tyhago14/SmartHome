@@ -1,0 +1,90 @@
+.gridBox {
+    background-color: #b6d9361e;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.basic-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    margin-bottom: 1.5rem;
+}
+
+.gridBox-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--escuro);
+    padding-bottom: 0.5rem;
+}
+
+.gridBox-subtext {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: grey;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+.motoresTable {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: thin solid var(--Esi-Claro);
+    margin-top: 1rem;
+    width: 90%;
+    margin: auto;
+}
+
+.motoresTable th {
+    color: white;
+    background-color: var(--Esi-Claro);
+    font-size: 1.3rem;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.motoresTable td {
+    text-align: center;
+    border: solid thin var(--Esi-Claro);
+    border-style: none solid solid none;
+    padding: 10px;
+}
+
+.motoresTable tr:nth-child(even) {
+    background-color: aliceblue;
+}
+
+@media screen and (min-width: 769px) {
+    .card-tall {
+        grid-row: span 2 / auto;
+    }
+    .card-wide {
+        grid-column: span 2 / auto;
+    }
+    .card-superwide {
+        grid-column: span 3 / auto;
+    }
+    .card-supermegawide {
+        grid-column: span 6 / auto;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .basic-grid {
+        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .motoresTable th {
+        font-size: 0.8rem;
+    }
+    .gridBox-text {
+        font-size: 1rem;
+    }
+}

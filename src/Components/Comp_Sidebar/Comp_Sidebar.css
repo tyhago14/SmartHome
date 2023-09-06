@@ -185,7 +185,7 @@
         width: calc(100% - 7rem);
         transition: all 0.2s ease;
         z-index: 2;
-        background: #d4e8f1;
+        background: #ffffff;
     }
 
     .sidebar2:hover ~ .home-section2 {
