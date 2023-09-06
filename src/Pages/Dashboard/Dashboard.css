@@ -9,6 +9,16 @@
     padding: 1rem;
 }
 
+.gridBox2 {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
 .basic-grid {
     display: grid;
     gap: 1.5rem;
@@ -32,33 +42,6 @@
     margin-bottom: 1rem;
 }
 
-.motoresTable {
-    border-collapse: separate;
-    border-spacing: 0;
-    border: thin solid var(--Esi-Claro);
-    margin-top: 1rem;
-    width: 90%;
-    margin: auto;
-}
-
-.motoresTable th {
-    color: white;
-    background-color: var(--Esi-Claro);
-    font-size: 1.3rem;
-    padding: 0.5rem 0rem 0.5rem 0rem;
-}
-
-.motoresTable td {
-    text-align: center;
-    border: solid thin var(--Esi-Claro);
-    border-style: none solid solid none;
-    padding: 10px;
-}
-
-.motoresTable tr:nth-child(even) {
-    background-color: aliceblue;
-}
-
 @media screen and (min-width: 769px) {
     .card-tall {
         grid-row: span 2 / auto;
@@ -70,6 +53,9 @@
         grid-column: span 3 / auto;
     }
     .card-wide4 {
+        grid-column: span 4 / auto;
+    }
+    .card-wideTempo {
         grid-column: span 4 / auto;
     }
     .card-wide6 {

@@ -1,4 +1,5 @@
 import "./Comp_Charts.css";
+import ReactWeather /* useWeatherBit */ from "react-open-weather";
 import {
     XAxis,
     YAxis,
@@ -71,5 +72,57 @@ export const Charts1 = () => {
                 </ResponsiveContainer>
             </div>
         </div>
+    );
+};
+
+export const Tempo = () => {
+    const customStyles = {
+        fontFamily: "Helvetica, sans-serif",
+        gradientStart: "#0181C2",
+        gradientMid: "#04A7F9",
+        gradientEnd: "#fff",
+        locationFontColor: "#FFF",
+        todayTempFontColor: "#FFF",
+        todayDateFontColor: "#B5DEF4",
+        todayRangeFontColor: "#B5DEF4",
+        todayDescFontColor: "#B5DEF4",
+        todayInfoFontColor: "#B5DEF4",
+        todayIconColor: "#FFF",
+        forecastBackgroundColor: "#FFF",
+        forecastSeparatorColor: "#DDD",
+        forecastDateColor: "#777",
+        forecastDescColor: "#777",
+        forecastRangeColor: "#777",
+        forecastIconColor: "#4BC4F7",
+    };
+
+    const data = {
+        current: {
+            date: "Fri 27 November",
+            description: "Clear",
+            icon: "SVG PATH",
+            temperature: { current: "19", min: 15, max: 23 },
+            wind: "2",
+            humidity: 90,
+        },
+    };
+    /*     const { data, isLoading, errorMessage } = useWeatherBit({
+        key: "c6f1516f272d4c378b09f5423e73e77e",
+        lat: "48.137154",
+        lon: "11.576124",
+        lang: "pt",
+        unit: "M", // values are (M,S,I)
+    }); */
+    return (
+        <ReactWeather
+            theme={customStyles}
+            /*             isLoading={isLoading}
+            errorMessage={errorMessage} */
+            data={data}
+            lang="pt"
+            locationLabel="Munich"
+            unitsLabels={{ temperature: "C", windSpeed: "Km/h" }}
+            showForecast={false}
+        />
     );
 };

@@ -1,13 +1,22 @@
 import Sidebar from "../../Components/Comp_Sidebar/Comp_Sidebar";
 import Navbar from "../../Components/Comp_Navbar/Comp_Navbar";
 import "./Dashboard.css";
-import { Charts1 } from "../../Components/Comp_Charts/Comp_Charts";
+import { Charts1, Tempo } from "../../Components/Comp_Charts/Comp_Charts";
 const Dashboard = () => {
     return (
         <>
             <Sidebar Page="Dashboard">
                 <Navbar Page="Dashboard">
                     <section className="basic-grid">
+                        <div className="gridBox card-wide">
+                            <div className="gridBox-text">
+                                {" "}
+                                Bem vindo EXEMPLO{" "}
+                            </div>
+                        </div>
+                        <div className="gridBox2 card-wide4">
+                            <Tempo />
+                        </div>
                         <div className="gridBox card-wide">
                             <div className="gridBox-text">
                                 {" "}
@@ -46,12 +55,6 @@ const Dashboard = () => {
                                 Bateria do sensor{" "}
                             </div>
                             <Charts1 />
-                        </div>
-                        <div className="gridBox card-wide">
-                            <div className="gridBox-text"> Interruptor </div>
-                        </div>
-                        <div className="gridBox card-wide4">
-                            <div className="gridBox-text"> Meteorologia </div>
                         </div>
                     </section>
                 </Navbar>
