@@ -187,9 +187,9 @@
         z-index: 2;
         background: #f5f5f4;
     }
-
+    /* 
     .sidebar2:hover ~ .home-section2 {
         left: 16rem;
         width: calc(100% - 16rem);
-    }
+    } */
 }
