@@ -5,8 +5,12 @@ import { Charts1, Tempo } from "../../Components/Comp_Charts/Comp_Charts";
 import fall from "../../assets/fall.png";
 import hot from "../../assets/hot.png";
 import water from "../../assets/water-splash.png";
-import bat from "../../assets/battery.png";
+//import bat from "../../assets/battery.png";
 import { useState, useEffect } from "react";
+import Quarto from "../../assets/quarto.png";
+import Cozinha from "../../assets/kitchen.png";
+import Sala from "../../assets/sala.png";
+import Banho from "../../assets/banho.png";
 
 const Dashboard = () => {
     useEffect(() => {
@@ -72,22 +76,31 @@ const Dashboard = () => {
         //Sala
         renderComponent = (
             <section className="basic-grid">
-                <div className="gridBox card-wide3">
-                    <div className="gridBox-text">Temperatura e humidade</div>
+                <div className="gridBox">
+                    <div className="gridBox-text">Temperatura</div>
                     <div className="iconValor">
                         <div className="iconValorLeft">
                             <img src={hot} alt="" />
                         </div>
-                        <div className="iconValorRight">25 Cº</div>
+                        <div className="iconValorRight">25ºC</div>
+                    </div>
+                </div>
+                <div className="gridBox card-tall card-wide3">
+                    <div className="gridBox-text">Lisboa</div>
+                    <Charts1 />
+                </div>
+                <div className="gridBox card-tall card-wide2">
+                    <div className="gridBox-text">Bateria</div>
+                    <Charts1 />
+                </div>
+                <div className="gridBox">
+                    <div className="gridBox-text">Humidade</div>
+                    <div className="iconValor">
                         <div className="iconValorLeft">
                             <img src={water} alt="" />
                         </div>
-                        <div className="iconValorRight">87 %</div>
+                        <div className="iconValorRight">87%</div>
                     </div>
-                </div>
-                <div className="gridBox card-wide3">
-                    <div className="gridBox-text">Bateria</div>
-                    <Charts1 />
                 </div>
             </section>
         );
@@ -168,32 +181,36 @@ const Dashboard = () => {
                                 type="button"
                                 className="nav-item"
                                 // eslint-disable-next-line react/no-unknown-property
-                                active-color="blue"
+                                active-color="#2b8750"
                             >
+                                <img src={Sala} alt="" />
                                 Sala de estar
                             </button>
                             <button
                                 type="button"
                                 className="nav-item"
                                 // eslint-disable-next-line react/no-unknown-property
-                                active-color="green"
+                                active-color="#dc76dd"
                             >
+                                <img src={Cozinha} alt="" />
                                 Cozinha
                             </button>
                             <button
                                 type="button"
                                 className="nav-item"
                                 // eslint-disable-next-line react/no-unknown-property
-                                active-color="red"
+                                active-color="#219ebc"
                             >
+                                <img src={Banho} alt="" />
                                 Casa de banho
                             </button>
                             <button
                                 type="button"
                                 className="nav-item"
                                 // eslint-disable-next-line react/no-unknown-property
-                                active-color="rebeccapurple"
+                                active-color="#f27777"
                             >
+                                <img src={Quarto} alt="" />
                                 Quarto
                             </button>
                             <span className="nav-indicator"></span>

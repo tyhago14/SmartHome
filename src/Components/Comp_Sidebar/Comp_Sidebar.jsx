@@ -4,10 +4,11 @@ import logo from "../../assets/home3-final-Icon.png";
 import "./Comp_Sidebar.css";
 import {
     MdLogout,
-    MdOutlineAreaChart,
+    /*     MdOutlineAreaChart,
     MdManageAccounts,
-    MdOutlineEditCalendar,
+    MdOutlineEditCalendar, */
 } from "react-icons/md";
+import { FcAreaChart, FcElectronics, FcServices } from "react-icons/fc";
 
 // eslint-disable-next-line react/prop-types
 const Comp_Sidebar = ({ Page, children }) => {
@@ -52,7 +53,7 @@ const Comp_Sidebar = ({ Page, children }) => {
                             className="sidebar2-link"
                             onClick={goDash}
                         >
-                            <MdOutlineAreaChart size={40} />
+                            <FcAreaChart size={40} />
                             <span className="link-text">Dasboard</span>
                         </a>
                     </li>
@@ -69,7 +70,7 @@ const Comp_Sidebar = ({ Page, children }) => {
                             className="sidebar2-link"
                             onClick={goDisp}
                         >
-                            <MdOutlineEditCalendar size={40} />
+                            <FcElectronics size={40} />
                             <span className="link-text">Dispositivos</span>
                         </a>
                     </li>
@@ -86,7 +87,7 @@ const Comp_Sidebar = ({ Page, children }) => {
                             className="sidebar2-link"
                             onClick={goConta}
                         >
-                            <MdManageAccounts size={40} />
+                            <FcServices size={40} />
                             <span className="link-text">Conta</span>
                         </a>
                     </li>
