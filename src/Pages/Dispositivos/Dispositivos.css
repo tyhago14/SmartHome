@@ -52,7 +52,7 @@ input.custom-input {
     max-height: 0;
     padding: 0 1em;
     color: #2c3e50;
-    background: #98bf4534;
+    background: var(--fundo);
     transition: all 0.35s;
 }
 .tab-close {

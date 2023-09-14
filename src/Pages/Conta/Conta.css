@@ -4,13 +4,13 @@
 }
 
 .conta-box {
-    background-color: #fffffe;
-    border-radius: 10px;
+    background-color: var(--fundo);
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
         rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    margin: 0rem 1rem 0rem 1rem;
-    padding: 2rem 2rem 1rem 2rem;
+    margin: 0rem 5rem 0rem 5rem;
+    padding: 2rem 0rem 1rem 0rem;
 }
 
 .conta-box-flex {
@@ -63,6 +63,7 @@
     padding-right: 2rem;
     font-size: 1.2rem;
     color: rgb(111, 111, 111);
+    background-color: white;
 }
 
 .btn-center {

@@ -32,7 +32,20 @@ const Dashboard = () => {
             indicator.style.width = `${el.offsetWidth}px`;
             indicator.style.left = `${el.offsetLeft}px`;
             indicator.style.backgroundColor = el.getAttribute("active-color");
-
+            if (
+                el.id === "banho" ||
+                el.id === "sala" ||
+                el.id === "cozinha" ||
+                el.id === "quarto"
+            ) {
+                const element = document.getElementById(el.id + "B");
+                element.classList.add("is-active");
+                element.style.color = element.getAttribute("active-color");
+                indicator.style.width = `${element.offsetWidth}px`;
+                indicator.style.left = `${element.offsetLeft}px`;
+                indicator.style.backgroundColor =
+                    element.getAttribute("active-color");
+            }
             el.classList.add("is-active");
             el.style.color = el.getAttribute("active-color");
         }
@@ -146,7 +159,7 @@ const Dashboard = () => {
     return (
         <>
             <Sidebar Page="Dashboard">
-                <Navbar Page="Dashboard">
+                <Navbar Page="A minha Casa">
                     <section className="basic-grid">
                         <div
                             className="gridBoxHello card-wide3"
@@ -182,8 +195,9 @@ const Dashboard = () => {
                                 className="nav-item"
                                 // eslint-disable-next-line react/no-unknown-property
                                 active-color="#2b8750"
+                                id="salaB"
                             >
-                                <img src={Sala} alt="" />
+                                <img src={Sala} alt="" id="sala" />
                                 Sala de estar
                             </button>
                             <button
@@ -191,8 +205,9 @@ const Dashboard = () => {
                                 className="nav-item"
                                 // eslint-disable-next-line react/no-unknown-property
                                 active-color="#dc76dd"
+                                id="cozinhaB"
                             >
-                                <img src={Cozinha} alt="" />
+                                <img src={Cozinha} alt="" id="cozinha" />
                                 Cozinha
                             </button>
                             <button
@@ -200,8 +215,9 @@ const Dashboard = () => {
                                 className="nav-item"
                                 // eslint-disable-next-line react/no-unknown-property
                                 active-color="#219ebc"
+                                id="banhoB"
                             >
-                                <img src={Banho} alt="" />
+                                <img src={Banho} alt="" id="banho" />
                                 Casa de banho
                             </button>
                             <button
@@ -209,8 +225,9 @@ const Dashboard = () => {
                                 className="nav-item"
                                 // eslint-disable-next-line react/no-unknown-property
                                 active-color="#f27777"
+                                id="quartoB"
                             >
-                                <img src={Quarto} alt="" />
+                                <img src={Quarto} alt="" id="quarto" />
                                 Quarto
                             </button>
                             <span className="nav-indicator"></span>
