@@ -101,6 +101,9 @@ const Comp_login = () => {
                 element2.classList.add("erro");
                 element3.classList.add("erro");
                 element4.classList.add("erro");
+                toast.error("Preencha todos os campos!", {
+                    theme: "colored",
+                });
             } else {
                 console.log("Com dados completos");
                 navigate("/dashboard");
@@ -146,7 +149,7 @@ const Comp_login = () => {
     }
 
     if (estado === 1) {
-        // REGISTO //
+        // REGISTO 1//
         renderComponent = (
             <div className="login__container">
                 <div className="titulo_grande"> Novo Registo </div>
@@ -188,7 +191,7 @@ const Comp_login = () => {
     }
 
     if (estado === 2) {
-        // REGISTO //
+        // REGISTO 2//
         renderComponent = (
             <div className="login__container">
                 <div className="titulo_grande"> Finalização do Registo </div>
