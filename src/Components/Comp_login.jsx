@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGlobe } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 const Comp_login = () => {
     const [email, setEmail] = useState("");
@@ -16,12 +17,61 @@ const Comp_login = () => {
     let renderComponent = null;
 
     const handleClickLogin = () => {
-        navigate("/dashboard");
+        const element1 = document.getElementById("emailLogin");
+        const element2 = document.getElementById("passwordfieldLogin");
+        element1.classList.remove("erro");
+        element2.classList.remove("erro");
+        setTimeout(() => {
+            if (!email || !password) {
+                console.log("Sem dados completos");
+                //NotificationManager.success("Dados atualizados com sucesso!");
+                element1.classList.add("erro");
+                element2.classList.add("erro");
+                toast.error("Email ou Palavra-Passe incorretos!", {
+                    theme: "colored",
+                });
+            } else {
+                console.log("Com dados completos");
+                navigate("/dashboard");
+            }
+        }, 10);
+
+        //navigate("/dashboard");
     };
 
     const handleClickRegister = () => {
-        console.log("aahah");
-        setEstado(2);
+        const element1 = document.getElementById("email");
+        const element2 = document.getElementById("passwordfield");
+        const element3 = document.getElementById("passwordfield2");
+        element1.classList.remove("erro");
+        element2.classList.remove("erro");
+        element3.classList.remove("erro");
+        setTimeout(() => {
+            if (!email || !password || !password2) {
+                console.log("Sem dados completos");
+                element1.classList.add("erro");
+                element2.classList.add("erro");
+                element3.classList.add("erro");
+                toast.error("Preencha todos os campos!", {
+                    theme: "colored",
+                });
+            } else {
+                element1.classList.remove("erro");
+                element2.classList.remove("erro");
+                element3.classList.remove("erro");
+                console.log("Com dados completos");
+                if (password !== password2) {
+                    console.log("Pass diferente");
+                    element3.classList.add("erro");
+                    toast.error("As Palavras-Passes tem de ser iguais!", {
+                        theme: "colored",
+                    });
+                } else {
+                    console.log("Pass igual");
+                    setEstado(2);
+                }
+            }
+        }, 10);
     };
 
     const handleClickCoord = () => {
@@ -36,7 +86,26 @@ const Comp_login = () => {
     };
 
     const handleClickRegister2 = () => {
-        navigate("/dashboard");
+        const element1 = document.getElementById("nome");
+        const element2 = document.getElementById("cidade");
+        const element3 = document.getElementById("lat");
+        const element4 = document.getElementById("log");
+        element1.classList.remove("erro");
+        element2.classList.remove("erro");
+        element3.classList.remove("erro");
+        element4.classList.remove("erro");
+        setTimeout(() => {
+            if (!nome || !cidade || !Lat || !Long) {
+                console.log("Sem dados completos");
+                element1.classList.add("erro");
+                element2.classList.add("erro");
+                element3.classList.add("erro");
+                element4.classList.add("erro");
+            } else {
+                console.log("Com dados completos");
+                navigate("/dashboard");
+            }
+        }, 10);
     };
 
     if (estado === 0) {
@@ -46,18 +115,18 @@ const Comp_login = () => {
                 <div className="titulo_grande"> Inicie Sessão </div>
                 <div className="titulo_pequeno"> E-mail de utilizador </div>
                 <input
-                    id="email"
+                    id="emailLogin"
                     type="text"
-                    className="login__textBox"
+                    className="login__textBox0"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
 
                 <div className="titulo_pequeno"> Palavra-Passe </div>
                 <input
-                    id="passwordfield"
+                    id="passwordfieldLogin"
                     type="password"
-                    className="login__textBox"
+                    className="login__textBox0"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
@@ -100,7 +169,7 @@ const Comp_login = () => {
                 />
                 <div className="titulo_pequeno"> Repita a Palavra-Passe </div>
                 <input
-                    id="passwordfield"
+                    id="passwordfield2"
                     type="password"
                     className="login__textBox"
                     value={password2}

@@ -67,6 +67,15 @@
     padding-bottom: 5vw;
     width: 40rem;
 }
+.login__textBox0 {
+    border-radius: 25px;
+    border: 1px solid black;
+    padding: 15px;
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 25px;
+}
 .login__textBox {
     border-radius: 25px;
     border: 1px solid black;
@@ -76,6 +85,29 @@
     box-sizing: border-box;
     padding-left: 25px;
 }
+
+.erro {
+    border: 2px solid rgb(255, 0, 0) !important;
+    animation: vibrate 0.3s ease 4;
+}
+@keyframes vibrate {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+    75% {
+        transform: translateX(-2px);
+    }
+    100% {
+        transform: translateX(2px);
+    }
+}
+
 .coord {
     display: flex;
     gap: 2rem;
