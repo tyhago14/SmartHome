@@ -6,13 +6,18 @@ import fall from "../../assets/fall.png";
 import hot from "../../assets/hot.png";
 import water from "../../assets/water-splash.png";
 //import bat from "../../assets/battery.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Quarto from "../../assets/quarto.png";
 import Cozinha from "../../assets/kitchen.png";
 import Sala from "../../assets/sala.png";
 import Banho from "../../assets/banho.png";
+import { AppContext } from "../../GlobalState";
 
 const Dashboard = () => {
+    const { state, actions } = useContext(AppContext);
+    const { DadosUtilizador } = state;
+    console.log(DadosUtilizador);
+
     useEffect(() => {
         navButton();
     }, []);
