@@ -24,7 +24,6 @@ const Comp_login = () => {
         setTimeout(() => {
             if (!email || !password) {
                 console.log("Sem dados completos");
-                //NotificationManager.success("Dados atualizados com sucesso!");
                 element1.classList.add("erro");
                 element2.classList.add("erro");
                 toast.error("Email ou Palavra-Passe incorretos!", {
@@ -89,7 +88,7 @@ const Comp_login = () => {
         const element1 = document.getElementById("nome");
         const element2 = document.getElementById("cidade");
         const element3 = document.getElementById("lat");
-        const element4 = document.getElementById("log");
+        const element4 = document.getElementById("long");
         element1.classList.remove("erro");
         element2.classList.remove("erro");
         element3.classList.remove("erro");
@@ -223,7 +222,7 @@ const Comp_login = () => {
                         onChange={(e) => setLat(e.target.value)}
                     />
                     <input
-                        id="log"
+                        id="long"
                         type="number"
                         className="login__textBox50"
                         placeholder="Longitude"

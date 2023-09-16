@@ -123,6 +123,13 @@
     box-sizing: border-box;
     width: 45%;
 }
+#lat::-webkit-outer-spin-button,
+#lat::-webkit-inner-spin-button,
+#long::-webkit-outer-spin-button,
+#long::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 .globe {
     cursor: pointer;

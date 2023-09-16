@@ -2,24 +2,38 @@ import Sidebar from "../../Components/Comp_Sidebar/Comp_Sidebar";
 import Navbar from "../../Components/Comp_Navbar/Comp_Navbar";
 import { useState, useEffect } from "react";
 import logo from "../../assets/home3-final.png";
+import { toast } from "react-toastify";
+import { FcGlobe } from "react-icons/fc";
 import "./Conta.css";
 
 const Conta = () => {
     const [isEditable, setIsEditable] = useState(false);
     const [name, setName] = useState("");
-    const [address, setAddress] = useState("");
-    const [phone, setPhone] = useState("");
-    const [NIF, setNIF] = useState("");
     const [email, setEmail] = useState("");
+    const [cidade, setCidade] = useState("");
+    const [Lat, setLat] = useState("");
+    const [Long, setLong] = useState("");
+    const [password, setPassword] = useState("");
+    const [password2, setPassword2] = useState("");
+
+    const handleClickCoord = () => {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            /* 
+            console.log("Latitude is :", position.coords.latitude);
+            console.log("Longitude is :", position.coords.longitude);
+             */
+            setLat(position.coords.latitude);
+            setLong(position.coords.longitude);
+        });
+    };
 
     useEffect(() => {
         //AccountValues((userData) => {
         setName("Nome");
-        setAddress("Lisboa");
-        setPhone("9879879");
-        setNIF("54654646");
         setEmail("exemplo@gmail.com");
-
+        setCidade("Santo Tirso");
+        setLat("40.54");
+        setLong("-8.456");
         //});
     }, []);
 
@@ -37,6 +51,9 @@ const Conta = () => {
                 console.log(stateUpdate);
             else if (stateUpdate !== 1) console.log(stateUpdate);
             //    NotificationManager.error("Erro ao atualizar dados!"); */
+            toast.success("Dados atualizados com sucesso!", {
+                theme: "colored",
+            });
         }
         setIsEditable(!isEditable);
     };
@@ -84,42 +101,53 @@ const Conta = () => {
                                         <span>{email}</span>
                                     </div>
                                 </div>
-                                <div className="conta-nameInput">
-                                    <div className="conta-subTitulo">Cargo</div>
-                                    <div className="conta-info">
-                                        <span>{name}</span>
-                                    </div>
-                                </div>
                             </div>
 
                             <div className="conta-box-right">
                                 <div className="conta-nameInput">
                                     <div className="conta-subTitulo">
-                                        Estado da conta
+                                        Alterar Palavra-Passe
                                     </div>
-                                    <div className="conta-info">
-                                        <span>{name}</span>
+                                    <div className="coord">
+                                        <div className="conta-subTitulo2">
+                                            Palavra-Passe antiga
+                                        </div>
+                                        <div className="conta-subTitulo2">
+                                            Nova Palavra-Passe
+                                        </div>
+                                    </div>
+                                    <div className="coord">
+                                        <input
+                                            id="password"
+                                            type="password"
+                                            className="login__textBox50"
+                                            style={{ width: "50%" }}
+                                            onChange={(e) =>
+                                                setPassword(e.target.value)
+                                            }
+                                        />
+                                        <input
+                                            id="log"
+                                            type="password"
+                                            className="login__textBox50"
+                                            style={{ width: "50%" }}
+                                            onChange={(e) =>
+                                                setPassword2(e.target.value)
+                                            }
+                                        />
                                     </div>
                                 </div>
                                 <div className="conta-nameInput">
                                     <div className="conta-subTitulo">
-                                        UserID
-                                    </div>
-                                    <div className="conta-info">
-                                        <span>{name}</span>
-                                    </div>
-                                </div>
-                                <div className="conta-nameInput">
-                                    <div className="conta-subTitulo">
-                                        Morada
+                                        Cidade
                                     </div>
                                     <div className="conta-info">
                                         {isEditable ? (
                                             <input
                                                 type="text"
-                                                value={address}
+                                                value={cidade}
                                                 onChange={(e) =>
-                                                    setAddress(e.target.value)
+                                                    setCidade(e.target.value)
                                                 }
                                                 style={{
                                                     border: "none",
@@ -131,58 +159,41 @@ const Conta = () => {
                                                 }}
                                             />
                                         ) : (
-                                            <span>{address}</span>
+                                            <span>{cidade}</span>
                                         )}
                                     </div>
                                 </div>
                                 <div className="conta-nameInput">
                                     <div className="conta-subTitulo">
-                                        Contacto
+                                        Coordenadas geográficas
                                     </div>
-                                    <div className="conta-info">
-                                        {isEditable ? (
-                                            <input
-                                                type="text"
-                                                value={phone}
-                                                onChange={(e) =>
-                                                    setPhone(e.target.value)
-                                                }
-                                                style={{
-                                                    border: "none",
-                                                    fontSize: "1.1rem",
-                                                    width: "100%",
-                                                    color: "black",
-                                                    overflowWrap: "break-word",
-                                                    outline: "none",
-                                                }}
-                                            />
-                                        ) : (
-                                            <span>{phone}</span>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="conta-nameInput">
-                                    <div className="conta-subTitulo">NIF</div>
-                                    <div className="conta-info">
-                                        {isEditable ? (
-                                            <input
-                                                type="text"
-                                                value={NIF}
-                                                onChange={(e) =>
-                                                    setNIF(e.target.value)
-                                                }
-                                                style={{
-                                                    border: "none",
-                                                    fontSize: "1.1rem",
-                                                    width: "100%",
-                                                    color: "black",
-                                                    overflowWrap: "break-word",
-                                                    outline: "none",
-                                                }}
-                                            />
-                                        ) : (
-                                            <span>{NIF}</span>
-                                        )}
+
+                                    <div className="coord">
+                                        <input
+                                            id="lat"
+                                            type="number"
+                                            className="login__textBox50"
+                                            placeholder="Latitude"
+                                            value={Lat}
+                                            onChange={(e) =>
+                                                setLat(e.target.value)
+                                            }
+                                        />
+                                        <input
+                                            id="long"
+                                            type="number"
+                                            className="login__textBox50"
+                                            placeholder="Longitude"
+                                            value={Long}
+                                            onChange={(e) =>
+                                                setLong(e.target.value)
+                                            }
+                                        />
+                                        <FcGlobe
+                                            size={50}
+                                            onClick={handleClickCoord}
+                                            className="globe"
+                                        />
                                     </div>
                                 </div>
                             </div>
