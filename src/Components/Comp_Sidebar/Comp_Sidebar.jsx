@@ -55,7 +55,6 @@ const Comp_Sidebar = ({ Page, children }) => {
                             onClick={goDash}
                         >
                             <FcAreaChart size={40} />
-                            <span className="link-text">Dasboard</span>
                         </a>
                     </li>
 
@@ -72,7 +71,6 @@ const Comp_Sidebar = ({ Page, children }) => {
                             onClick={goDisp}
                         >
                             <FcElectronics size={40} />
-                            <span className="link-text">Dispositivos</span>
                         </a>
                     </li>
 
@@ -89,7 +87,6 @@ const Comp_Sidebar = ({ Page, children }) => {
                             onClick={goConta}
                         >
                             <FcServices size={40} />
-                            <span className="link-text">Conta</span>
                         </a>
                     </li>
 

@@ -13,8 +13,9 @@ const Conta = () => {
     const [cidade, setCidade] = useState("");
     const [Lat, setLat] = useState("");
     const [Long, setLong] = useState("");
-    const [password, setPassword] = useState("");
-    const [password2, setPassword2] = useState("");
+    const [password, setPassword] = useState(""); //Nova
+    const [password2, setPassword2] = useState(""); //Rep Nova
+    const [password3, setPassword3] = useState(""); //Velha
     const { state, actions } = useContext(AppContext);
     const { DadosUtilizador, AvatarUtilizador } = state;
     const { AtualizarAvatarUtilizador, setDadosUtilizador } = actions;
@@ -54,6 +55,44 @@ const Conta = () => {
         setLong(DadosUtilizador.long);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    const handlePasss = () => {
+        const element1 = document.getElementById("password");
+        const element2 = document.getElementById("password2");
+        const element3 = document.getElementById("password3");
+        element1.classList.remove("erro");
+        element2.classList.remove("erro");
+        element3.classList.remove("erro");
+        setTimeout(() => {
+            if (!password || !password2 || !password3) {
+                element1.classList.add("erro");
+                element2.classList.add("erro");
+                element3.classList.add("erro");
+                toast.error("Preencha todos os campos", {
+                    theme: "colored",
+                });
+            } else {
+                element1.classList.remove("erro");
+                element2.classList.remove("erro");
+                element3.classList.remove("erro");
+                if (password !== password2) {
+                    element2.classList.add("erro");
+                    element1.classList.add("erro");
+                    toast.error("As Palavras-Passes tem de ser iguais!", {
+                        theme: "colored",
+                    });
+                } else {
+                    setDadosUtilizador({
+                        ...DadosUtilizador,
+                        pass: password3,
+                    });
+                    toast.success("Palavra-passe atualizada com sucesso!", {
+                        theme: "colored",
+                    });
+                }
+            }
+        }, 10);
+    };
 
     const handleButtonClick = async () => {
         if (isEditable) {
@@ -173,10 +212,10 @@ const Conta = () => {
                                     </div>
                                     <div className="coord">
                                         <div className="conta-subTitulo2">
-                                            Palavra-Passe antiga
+                                            Nova Palavra-Passe
                                         </div>
                                         <div className="conta-subTitulo2">
-                                            Nova Palavra-Passe
+                                            Repita a Palavra-Passe
                                         </div>
                                     </div>
                                     <div className="coord">
@@ -190,7 +229,7 @@ const Conta = () => {
                                             }
                                         />
                                         <input
-                                            id="log"
+                                            id="password2"
                                             type="password"
                                             className="login__textBox50"
                                             style={{ width: "50%" }}
@@ -198,6 +237,31 @@ const Conta = () => {
                                                 setPassword2(e.target.value)
                                             }
                                         />
+                                    </div>
+                                    <div
+                                        className="coord"
+                                        style={{ margin: "2rem 0rem 0rem" }}
+                                    >
+                                        <div className="conta-subTitulo2">
+                                            Palavra-Passe antiga
+                                        </div>
+                                    </div>
+                                    <div className="coord">
+                                        <input
+                                            id="password3"
+                                            type="password"
+                                            className="login__textBox50"
+                                            style={{ width: "50%" }}
+                                            onChange={(e) =>
+                                                setPassword3(e.target.value)
+                                            }
+                                        />
+                                        <button
+                                            className="pass__btn"
+                                            onClick={handlePasss}
+                                        >
+                                            Alterar Palavra-Passe
+                                        </button>
                                     </div>
                                 </div>
                                 <div className="conta-nameInput">

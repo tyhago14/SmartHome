@@ -14,7 +14,7 @@ import Banho from "../../assets/banho.png";
 import { AppContext } from "../../GlobalState";
 
 const Dashboard = () => {
-    const { state, actions } = useContext(AppContext);
+    const { state } = useContext(AppContext);
     const { DadosUtilizador } = state;
     console.log(DadosUtilizador);
 
@@ -33,7 +33,7 @@ const Dashboard = () => {
                 item.classList.remove("is-active");
                 item.removeAttribute("style");
             });
-
+            console.log(el, el.offsetWidth);
             indicator.style.width = `${el.offsetWidth}px`;
             indicator.style.left = `${el.offsetLeft}px`;
             indicator.style.backgroundColor = el.getAttribute("active-color");

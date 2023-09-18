@@ -94,7 +94,10 @@
         padding-bottom: 5rem;
     }
     .navbar-right {
-        height: 4rem;
+        height: 5rem;
+    }
+    .titulo {
+        font-size: 2.5rem;
     }
     .navbar-UserName {
         display: none;
