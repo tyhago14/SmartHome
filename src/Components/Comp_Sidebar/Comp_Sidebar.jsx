@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/home3-final-Icon.png";
+import logout from "../../assets/log-out.png";
 //import { useEffect, useState } from "react";
 import "./Comp_Sidebar.css";
 import {
@@ -98,8 +99,7 @@ const Comp_Sidebar = ({ Page, children }) => {
                             className="sidebar2-link"
                             onClick={goLogout}
                         >
-                            <MdLogout size={40} />
-                            <span className="link-text">SAIR</span>
+                            <img src={logout} />
                         </a>
                     </li>
                 </ul>
