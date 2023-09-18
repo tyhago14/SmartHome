@@ -30,3 +30,8 @@ a:hover {
 a:active {
     text-decoration: underline;
 }
+
+.Toastify__toast-container--top-right {
+    top: 5em !important;
+    right: 1em;
+}

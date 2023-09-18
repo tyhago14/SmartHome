@@ -112,6 +112,7 @@
     display: flex;
     gap: 2rem;
     align-items: center;
+    color: #6f6f6f;
 }
 .login__textBox50 {
     border-radius: 25px;
@@ -122,6 +123,7 @@
     width: 100%;
     box-sizing: border-box;
     width: 45%;
+    background-color: #fff;
 }
 #lat::-webkit-outer-spin-button,
 #lat::-webkit-inner-spin-button,
@@ -155,6 +157,24 @@
 
 .login__btn:hover {
     background-color: var(--escuro);
+    cursor: pointer;
+}
+.login__btn2 {
+    width: 12rem;
+    border-radius: 25px;
+    border: 1px solid black;
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: white;
+    background-color: var(--escuro);
+    font-weight: bolder;
+    font-size: 130%;
+}
+
+.login__btn2:hover {
+    background-color: var(--verde);
     cursor: pointer;
 }
 

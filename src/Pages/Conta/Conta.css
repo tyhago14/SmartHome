@@ -30,7 +30,7 @@
     width: 50%;
     padding-left: 2.5rem;
     padding-right: 5rem;
-    padding-top: 10rem;
+    padding-top: 7rem;
     border-left: thin solid black;
     display: flex;
     flex-direction: column;
@@ -108,6 +108,73 @@
 .conta-editarBtn:hover {
     background-color: var(--escuro);
     cursor: pointer;
+}
+
+.avatar-upload {
+    position: relative;
+    max-width: 230px;
+    margin: 2rem auto;
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #ffffff;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload .avatar-edit label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+
+.avatar-upload .avatar-edit label:after {
+    content: "+";
+    color: var(--medio);
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.avatar-upload .avatar-preview {
+    width: 230px;
+    height: 230px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #f8f8f8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-upload .avatar-preview div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 @media only screen and (max-width: 425px) {

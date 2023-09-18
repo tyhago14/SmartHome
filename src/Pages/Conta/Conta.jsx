@@ -1,10 +1,10 @@
 import Sidebar from "../../Components/Comp_Sidebar/Comp_Sidebar";
 import Navbar from "../../Components/Comp_Navbar/Comp_Navbar";
-import { useState, useEffect } from "react";
-import logo from "../../assets/home3-final.png";
+import { useState, useEffect, useContext } from "react";
 import { toast } from "react-toastify";
 import { FcGlobe } from "react-icons/fc";
 import "./Conta.css";
+import { AppContext } from "../../GlobalState";
 
 const Conta = () => {
     const [isEditable, setIsEditable] = useState(false);
@@ -15,26 +15,44 @@ const Conta = () => {
     const [Long, setLong] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
+    const { state, actions } = useContext(AppContext);
+    const { DadosUtilizador, AvatarUtilizador } = state;
+    const { AtualizarAvatarUtilizador, setDadosUtilizador } = actions;
 
-    const handleClickCoord = () => {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            /* 
-            console.log("Latitude is :", position.coords.latitude);
-            console.log("Longitude is :", position.coords.longitude);
-             */
-            setLat(position.coords.latitude);
-            setLong(position.coords.longitude);
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        if (file.size > 1024 * 1024) {
+            toast.error("A imagem tem de ser menor que 1MB", {
+                theme: "colored",
+            });
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = () => {
+            AtualizarAvatarUtilizador(reader.result);
+        };
+        reader.readAsDataURL(file);
+        toast.success("Imagem atualizada com sucesso!", {
+            theme: "colored",
         });
     };
 
+    const handleClickCoord = () => {
+        if (isEditable) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                setLat(position.coords.latitude);
+                setLong(position.coords.longitude);
+            });
+        }
+    };
+
     useEffect(() => {
-        //AccountValues((userData) => {
-        setName("Nome");
-        setEmail("exemplo@gmail.com");
-        setCidade("Santo Tirso");
-        setLat("40.54");
-        setLong("-8.456");
-        //});
+        setEmail(DadosUtilizador.email);
+        setName(DadosUtilizador.nome);
+        setCidade(DadosUtilizador.cidade);
+        setLat(DadosUtilizador.lat);
+        setLong(DadosUtilizador.long);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleButtonClick = async () => {
@@ -51,6 +69,16 @@ const Conta = () => {
                 console.log(stateUpdate);
             else if (stateUpdate !== 1) console.log(stateUpdate);
             //    NotificationManager.error("Erro ao atualizar dados!"); */
+
+            setDadosUtilizador({
+                ...DadosUtilizador,
+                email: email,
+                nome: name,
+                cidade: cidade,
+                lat: Lat,
+                long: Long,
+            });
+
             toast.success("Dados atualizados com sucesso!", {
                 theme: "colored",
             });
@@ -64,11 +92,28 @@ const Conta = () => {
                     <div className="conta-box">
                         <div className="conta-box-flex">
                             <div className="conta-box-left">
-                                <img
-                                    className="logoEmpresa"
-                                    src={logo}
-                                    alt="Empresa Logo"
-                                />
+                                <div className="container">
+                                    <div className="avatar-upload">
+                                        <div className="avatar-edit">
+                                            <input
+                                                type="file"
+                                                id="imageUpload"
+                                                accept=".png, .jpg, .jpeg"
+                                                onChange={handleImageChange}
+                                            />
+                                            <label htmlFor="imageUpload"></label>
+                                        </div>
+                                        <div className="avatar-preview">
+                                            <div
+                                                id="imagePreview"
+                                                style={{
+                                                    backgroundImage: `url(${AvatarUtilizador})`,
+                                                }}
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div className="conta-nameInput">
                                     <div className="conta-subTitulo">Nome</div>
                                     <div className="conta-info">
@@ -98,7 +143,25 @@ const Conta = () => {
                                         E-mail
                                     </div>
                                     <div className="conta-info">
-                                        <span>{email}</span>
+                                        {isEditable ? (
+                                            <input
+                                                type="text"
+                                                value={email}
+                                                onChange={(e) =>
+                                                    setEmail(e.target.value)
+                                                }
+                                                style={{
+                                                    border: "none",
+                                                    fontSize: "1.1rem",
+                                                    width: "100%",
+                                                    color: "black",
+                                                    overflowWrap: "break-word",
+                                                    outline: "none",
+                                                }}
+                                            />
+                                        ) : (
+                                            <span> {email}</span>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -169,26 +232,40 @@ const Conta = () => {
                                     </div>
 
                                     <div className="coord">
-                                        <input
-                                            id="lat"
-                                            type="number"
-                                            className="login__textBox50"
-                                            placeholder="Latitude"
-                                            value={Lat}
-                                            onChange={(e) =>
-                                                setLat(e.target.value)
-                                            }
-                                        />
-                                        <input
-                                            id="long"
-                                            type="number"
-                                            className="login__textBox50"
-                                            placeholder="Longitude"
-                                            value={Long}
-                                            onChange={(e) =>
-                                                setLong(e.target.value)
-                                            }
-                                        />
+                                        {isEditable ? (
+                                            <input
+                                                id="lat"
+                                                type="number"
+                                                className="login__textBox50"
+                                                placeholder="Latitude"
+                                                value={Lat}
+                                                onChange={(e) =>
+                                                    setLat(e.target.value)
+                                                }
+                                            />
+                                        ) : (
+                                            <div className="login__textBox50">
+                                                <span>{Lat}</span>
+                                            </div>
+                                        )}
+
+                                        {isEditable ? (
+                                            <input
+                                                id="long"
+                                                type="number"
+                                                className="login__textBox50"
+                                                placeholder="Latitude"
+                                                value={Long}
+                                                onChange={(e) =>
+                                                    setLong(e.target.value)
+                                                }
+                                            />
+                                        ) : (
+                                            <div className="login__textBox50">
+                                                <span>{Long}</span>
+                                            </div>
+                                        )}
+
                                         <FcGlobe
                                             size={50}
                                             onClick={handleClickCoord}
@@ -199,12 +276,21 @@ const Conta = () => {
                             </div>
                         </div>
                         <div className="btn-center">
-                            <button
-                                className="login__btn"
-                                onClick={handleButtonClick}
-                            >
-                                {isEditable ? "Submeter" : "Editar campos"}
-                            </button>
+                            {isEditable ? (
+                                <button
+                                    className="login__btn2"
+                                    onClick={handleButtonClick}
+                                >
+                                    Submeter
+                                </button>
+                            ) : (
+                                <button
+                                    className="login__btn"
+                                    onClick={handleButtonClick}
+                                >
+                                    Editar campos
+                                </button>
+                            )}
                         </div>
                     </div>
                 </Navbar>
