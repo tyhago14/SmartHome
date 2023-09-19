@@ -4,16 +4,17 @@ input.custom-input {
     z-index: -1;
 }
 
-.row {
-    display: flex;
-}
 .row .col {
     flex: 1;
 }
 .text-icon {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 2rem;
+    align-items: center;
+}
+.text-icon img {
+    width: 3rem;
 }
 .tabs {
     border-radius: 10px;
@@ -28,6 +29,7 @@ input.custom-input {
     width: 100%;
     color: white;
     overflow: hidden;
+    border-bottom: thin solid black;
 }
 .tab-label {
     display: flex;
@@ -37,6 +39,7 @@ input.custom-input {
     font-weight: bold;
     cursor: pointer;
     font-size: 1.6rem;
+    align-items: center;
 }
 .tab-label:hover {
     background: var(--escuro);

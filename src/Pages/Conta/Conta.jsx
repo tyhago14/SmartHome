@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { FcGlobe } from "react-icons/fc";
 import "./Conta.css";
 import { AppContext } from "../../GlobalState";
+import { HiOutlinePencilSquare } from "react-icons/hi2";
 
 const Conta = () => {
     const [isEditable, setIsEditable] = useState(false);
@@ -337,9 +338,26 @@ const Conta = () => {
                                         />
                                     </div>
                                 </div>
+                                <div className="btn-center" id="phone">
+                                    {isEditable ? (
+                                        <button
+                                            className="login__btn2"
+                                            onClick={handleButtonClick}
+                                        >
+                                            Submeter
+                                        </button>
+                                    ) : (
+                                        <button
+                                            className="login__btn"
+                                            onClick={handleButtonClick}
+                                        >
+                                            Editar campos
+                                        </button>
+                                    )}
+                                </div>
                             </div>
                         </div>
-                        <div className="btn-center">
+                        <div className="btn-center" id="pc">
                             {isEditable ? (
                                 <button
                                     className="login__btn2"
