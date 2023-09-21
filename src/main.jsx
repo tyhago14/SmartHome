@@ -9,6 +9,10 @@ import Conta from "./Pages/Conta/Conta.jsx";
 
 const router = createBrowserRouter([
     {
+        path: "/",
+        element: <Login />,
+    },
+    {
         path: "/smarthome/",
         element: <App />,
         children: [
