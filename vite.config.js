@@ -9,4 +9,5 @@ export default defineConfig({
         host: true,
     },
     publicDir: "./public",
+    base: "/SmartHome/",
 });
