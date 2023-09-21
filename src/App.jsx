@@ -1,10 +1,5 @@
 import "./App.css";
-import {
-    BrowserRouter as Router,
-    Route,
-    Routes,
-    Outlet,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import Dashboard from "./Pages/Dashboard/Dashboard";
@@ -37,7 +32,6 @@ function App() {
                     </Routes>
                 </Router>
             </GlobalState>
-            <Outlet />
         </>
     );
 }

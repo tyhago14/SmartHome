@@ -1,6 +1,5 @@
 {
     "name": "smarthome",
-    "homepage": "https://tyhago14.github.io/SmartHome/",
     "private": true,
     "version": "0.0.0",
     "type": "module",
