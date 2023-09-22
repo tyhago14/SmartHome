@@ -8,6 +8,7 @@ export default defineConfig({
         port: 8000,
         host: true,
     },
+    base: "/SmartHome",
     build: {
         outDir: "dist", // Output directory
         assetsDir: "src/assets", // Directory for assets (e.g., images, fonts)
