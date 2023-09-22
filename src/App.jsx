@@ -4,7 +4,7 @@ import Login from "./Pages/Login/Login";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Dispositivos from "./Pages/Dispositivos/Dispositivos";
 import Conta from "./Pages/Conta/Conta";
-import { ToastContainer } from "react-toastify";
+//import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalState } from "./GlobalState";
 
@@ -12,7 +12,7 @@ function App() {
     return (
         <>
             <GlobalState>
-                <ToastContainer />
+                {/*  <ToastContainer /> */}
                 <Router>
                     <Routes>
                         <Route exact path="/" element={<Login />} />
