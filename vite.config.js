@@ -8,12 +8,13 @@ export default defineConfig({
         port: 8000,
         host: true,
     },
-    base: "/SmartHome",
+    base: "/",
     build: {
-        outDir: "dist", // Output directory
-        assetsDir: "src/assets", // Directory for assets (e.g., images, fonts)
+        manifest: true,
+        emptyOutDir: true,
         rollupOptions: {
             input: {
+                main: "./src/App.jsx",
                 Login: "src/Pages/Login/Login.jsx",
                 Dashboard: "src/Pages/Dashboard/Dashboard.jsx",
                 Conta: "src/Pages/Conta/Conta.jsx",
