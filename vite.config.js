@@ -8,6 +8,4 @@ export default defineConfig({
         port: 8000,
         host: true,
     },
-    //publicDir: "./public",
-    base: "/smarthome/",
 });
