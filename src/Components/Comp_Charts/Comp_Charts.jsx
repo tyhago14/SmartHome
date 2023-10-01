@@ -9,8 +9,6 @@ import {
     BarChart,
     Bar,
     ResponsiveContainer,
-    LineChart,
-    Line,
     Area,
     AreaChart,
     ComposedChart,

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Sidebar from "../../Components/Comp_Sidebar/Comp_Sidebar";
 import Navbar from "../../Components/Comp_Navbar/Comp_Navbar";
 import "./Dispositivos.css";
