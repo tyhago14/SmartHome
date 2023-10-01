@@ -9,6 +9,11 @@ import {
     BarChart,
     Bar,
     ResponsiveContainer,
+    LineChart,
+    Line,
+    Area,
+    AreaChart,
+    ComposedChart,
 } from "recharts";
 
 const data = [
@@ -44,6 +49,39 @@ const data = [
     },
 ];
 
+const data2 = [
+    {
+        name: "09h",
+        Humidade: 80,
+        Temperatura: 18,
+        Bateria: 90,
+    },
+    {
+        name: "10h",
+        Humidade: 85,
+        Temperatura: 19,
+        Bateria: 87,
+    },
+    {
+        name: "11h",
+        Humidade: 93,
+        Temperatura: 22,
+        Bateria: 83,
+    },
+    {
+        name: "12h",
+        Humidade: 76,
+        Temperatura: 22,
+        Bateria: 79,
+    },
+    {
+        name: "13h",
+        Humidade: 50,
+        Temperatura: 10,
+        Bateria: 75,
+    },
+];
+
 export const Charts1 = () => {
     return (
         <div className="box-width">
@@ -75,6 +113,104 @@ export const Charts1 = () => {
     );
 };
 
+export const Chart2 = (width) => {
+    var barSize = 50;
+    if (width.value < 800) {
+        barSize = 25;
+    }
+    console.log(width.value, barSize);
+    return (
+        <div className="box-width">
+            <div style={{ width: "100%", height: 350 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                    <ComposedChart
+                        width={500}
+                        height={300}
+                        data={data2}
+                        margin={{
+                            top: 20,
+                            right: 0,
+                            left: 0,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis
+                            yAxisId="left"
+                            label={{
+                                value: "Temperatura Cº",
+                                angle: -90,
+                                dx: -10,
+                            }}
+                        />
+                        <YAxis
+                            yAxisId="right"
+                            orientation="right"
+                            label={{
+                                value: "Humidade %",
+                                angle: -90,
+                                dx: 10,
+                            }}
+                        />
+                        <Tooltip />
+                        <Legend />
+                        <Area
+                            yAxisId="right"
+                            type="monotone"
+                            dataKey="Humidade"
+                            stackId="1"
+                            stroke="#49b6ff"
+                            fill="#49b6ff"
+                        />
+                        <Bar
+                            yAxisId="left"
+                            dataKey="Temperatura"
+                            barSize={barSize}
+                            fill="#ff7300"
+                        />
+                    </ComposedChart>
+                </ResponsiveContainer>
+            </div>
+        </div>
+    );
+};
+
+export const Chart3 = (width) => {
+    var barSize = 50;
+    if (width.value < 800) {
+        barSize = 25;
+    }
+    console.log(width.value, barSize);
+    return (
+        <div className="box-width">
+            <div style={{ width: "100%", height: 350 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                    <AreaChart
+                        data={data2}
+                        margin={{
+                            top: 10,
+                            right: 30,
+                            left: 0,
+                            bottom: 0,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Area
+                            type="monotone"
+                            dataKey="Bateria"
+                            stroke="#8884d8"
+                            fill="#98bf45"
+                        />
+                    </AreaChart>
+                </ResponsiveContainer>
+            </div>
+        </div>
+    );
+};
 export const Tempo = () => {
     const customStyles = {
         fontFamily: "sans-serif",

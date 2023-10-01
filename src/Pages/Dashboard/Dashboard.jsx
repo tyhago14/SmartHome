@@ -1,7 +1,11 @@
 import Sidebar from "../../Components/Comp_Sidebar/Comp_Sidebar";
 import Navbar from "../../Components/Comp_Navbar/Comp_Navbar";
 import "./Dashboard.css";
-import { Charts1, Tempo } from "../../Components/Comp_Charts/Comp_Charts";
+import {
+    Chart2,
+    Chart3,
+    Tempo,
+} from "../../Components/Comp_Charts/Comp_Charts";
 import fall from "../../assets/fall.png";
 import hot from "../../assets/hot.png";
 import water from "../../assets/water-splash.png";
@@ -17,9 +21,12 @@ const Dashboard = () => {
     const { state } = useContext(AppContext);
     const { DadosUtilizador } = state;
     console.log(DadosUtilizador);
+    const [width, setWidth] = useState(window.innerWidth);
+    //console.log(width);
 
     useEffect(() => {
         navButton();
+        setWidth(window.innerWidth);
     }, []);
 
     function navButton() {
@@ -104,12 +111,12 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <div className="gridBox card-tall card-wide3">
-                    <div className="gridBox-text">Lisboa</div>
-                    <Charts1 />
+                    <div className="gridBox-text">Temperatura & Humidade</div>
+                    <Chart2 value={width} />
                 </div>
                 <div className="gridBox card-tall card-wide2">
-                    <div className="gridBox-text">Bateria</div>
-                    <Charts1 />
+                    <div className="gridBox-text">Bateria (%)</div>
+                    <Chart3 />
                 </div>
                 <div className="gridBox">
                     <div className="gridBox-text">Humidade</div>
