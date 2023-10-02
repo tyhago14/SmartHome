@@ -36,3 +36,26 @@ a:active {
     top: 5em !important;
     right: 1em;
 }
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--claro);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--claro);
+    background-image: -webkit-gradient(
+        linear,
+        40% 0%,
+        75% 84%,
+        from(var(--laranja)),
+        to(var(--escuro)),
+        color-stop(0.5, var(--verde))
+    );
+}
