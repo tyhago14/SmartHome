@@ -79,3 +79,25 @@ input.custom-input:checked ~ .tab-content {
     max-height: max-content;
     padding: 1em;
 }
+
+.info {
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem 0rem;
+}
+.info-text {
+    color: var(--escuro);
+    font-size: 1.2rem;
+}
+
+.info-data {
+    color: var(--medio);
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .info {
+        display: block;
+        gap: 2rem;
+    }
+}
