@@ -4,6 +4,26 @@
 
 The Smart Home Dashboard is a cutting-edge web application that allows users to efficiently control and monitor their smart home systems. Developed with React and styled using CSS, this platform is optimized for both mobile and desktop use, providing an intuitive interface for managing smart home devices and viewing real-time data.
 
+## Images
+
+Here are some screenshots of the Smart Home Dashboard:
+
+### Dashboard Overview
+
+![Welcome Page](preview/welcome.png)
+
+### Temperature and Humidity Monitoring
+
+![Home Page](preview/home.png)
+
+### Device Control Interface
+
+![Device Control](preview/devices.png)
+
+### Account Settings
+
+![Account Settings](preview/account.png)
+
 ## Features
 
 -   **Real-time Monitoring**: Track and display live data on temperature, humidity, and dangerous gases within your home.
